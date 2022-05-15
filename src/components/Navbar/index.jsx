@@ -19,7 +19,7 @@ export const Navbar = () => {
         <NavbarWrapper>
           <Logo onClick={() => navigate('/home')}>
             <Logo.Icon />
-            <Logo.Title>Houzing</Logo.Title>
+            <Logo.Title>Housing</Logo.Title>
           </Logo>
           <NavbarBody>
             {navbar.map(({ title, id, path }) => {
