@@ -1,7 +1,6 @@
 import React from 'react';
 import { navbar } from '../../utils/navbar';
 import {
-  Body,
   Wrapper,
   Container,
   NavbarWrapper,
@@ -35,9 +34,7 @@ export const Navbar = () => {
           </Button>
         </NavbarWrapper>
       </Container>
-      <Body>
-        <Outlet />
-      </Body>
+      <Outlet />
     </Wrapper>
   );
 };

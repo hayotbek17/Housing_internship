@@ -42,10 +42,7 @@ const NavbarBody = styled.div`
     color: #00fff5;
   }
 `;
-const Body = styled.div`
-  display: flex;
-  width: 100%;
-`;
+
 const Link = styled(NavLink)`
   font-family: 'Montserrat';
   font-style: normal;
@@ -70,4 +67,4 @@ Logo.Title = styled.div`
   font-weight: 500px;
 `;
 
-export { Wrapper, Container, Body, NavbarWrapper, NavbarBody, Link, Logo };
+export { Wrapper, Container,  NavbarWrapper, NavbarBody, Link, Logo };
