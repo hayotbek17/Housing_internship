@@ -4,11 +4,19 @@ import './index.css';
 import { Root } from './root';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'antd/dist/antd.css';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const query = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Root />
-    </Router>
+    <QueryClientProvider client={query}>
+      <Router>
+        <Root />
+      </Router>
+    </QueryClientProvider>
   </React.StrictMode>,
 );

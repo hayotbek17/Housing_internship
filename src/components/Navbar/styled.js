@@ -11,7 +11,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--primaryColor);
-
+  padding: 0px 130px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -67,4 +67,4 @@ Logo.Title = styled.div`
   font-weight: 500px;
 `;
 
-export { Wrapper, Container,  NavbarWrapper, NavbarBody, Link, Logo };
+export { Wrapper, Container, NavbarWrapper, NavbarBody, Link, Logo };

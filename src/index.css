@@ -13,3 +13,49 @@ body {
   --secondaryColor: #696969;
   --activeColor: #0061df;
 }
+
+.title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  /* identical to box height, or 129% */
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  /* text/1 */
+
+  color: #0d263b;
+}
+.subtitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0d263b;
+}
+.description {
+  /* Paragraph/Small/Regular */
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* Text / Color */
+
+  color: #696969;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleted {
+  text-decoration: line-through;
+}
