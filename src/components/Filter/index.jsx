@@ -9,29 +9,84 @@ import {
 } from './style';
 import { Input, Button } from '../Generic/';
 import { Popover } from 'antd';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useSearch from '../../hooks/useSearch';
+import UseReplace from '../../hooks/useReplace';
+
 export const Filter = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const query = useSearch();
+
+  // console.log(UseReplace(), 'Usereplace');
+
+  const onChange = ({ target }) => {
+    const { value, name } = target;
+    navigate(`${UseReplace(name, value)}`);
+  };
+
   const advansedSearch = (
     <Advanced>
       <Advanced.Title>Adress</Advanced.Title>
       <Section>
-        <Input pl={'15'} mr={'20'} placeholder={'Country'} />
-        <Input pl={'15'} mr={'20'} placeholder={'Region'} />
-        <Input pl={'15'} mr={'20'} placeholder={'City'} />
-        <Input pl={'15'} mr={'20'} placeholder={'Zip Code  '} />
+        <Input
+          placeholder={'Country'}
+          onChange={onChange}
+          name={'country'}
+          defaultValue={query.get('country')}
+        />
+        <Input
+          placeholder={'Region'}
+          onChange={onChange}
+          name={'region'}
+          defaultValue={query.get('region')}
+        />
+        <Input
+          onChange={onChange}
+          name={'city'}
+          defaultValue={query.get('city')}
+          placeholder={'City'}
+        />
+        <Input
+          placeholder={'Zip Code  '}
+          onChange={onChange}
+          name={'zip_code'}
+          defaultValue={query.get('zip_code')}
+        />
       </Section>
       <Advanced.Title>Apartment info</Advanced.Title>
       <Section>
-        <Input pl={'15'} mr={'20'} placeholder={'Rooms'} />
-        <Input pl={'15'} mr={'20'} placeholder={'Size'} />
-        <Input pl={'15'} mr={'20'} placeholder={'Sort'} />
+        <Input
+          placeholder={'Adress'}
+          onChange={onChange}
+          name={'adress'}
+          defaultValue={query.get('adress')}
+        />
+        <Input
+          placeholder={'Houses Name'}
+          onChange={onChange}
+          name={'houses_name'}
+          defaultValue={query.get('houses_name')}
+        />
+        <Input
+          placeholder={'Rooms'}
+          onChange={onChange}
+          name={'rooms'}
+          defaultValue={query.get('rooms')}
+        />
       </Section>
       <Advanced.Title>Price</Advanced.Title>
       <Section>
-        <Input pl={'15'} mr={'20'} placeholder={'Min Price'} />
-        <Input pl={'15'} mr={'20'} placeholder={'Max Price'} />{' '}
+        <Input
+          placeholder={'Min Price'}
+          onChange={onChange}
+          name={'min_price'}
+          defaultValue={query.get('min_price')}
+        />
+        <Input placeholder={'Max Price'} />{' '}
       </Section>
       <BottomSection>
-        <Button mr={'20'} width={'128px'} type={'primary'}>
+        <Button width={'128px'} type={'primary'}>
           Cancel
         </Button>
         <Button width={'128px'} type={'secondary'}>

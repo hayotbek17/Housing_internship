@@ -1,6 +1,7 @@
 import Generic from '../pages/Generic';
 import Home from '../pages/Home';
 import Properties from '../pages/Properties';
+import SignIn from '../pages/SignIn';
 export const navbar = [
   {
     id: 1,
@@ -27,6 +28,24 @@ export const navbar = [
     Element: <Generic />,
     search: '?',
     hidden: false,
+    private: false,
+  },
+  {
+    id: 4,
+    title: 'SignIn',
+    path: '/signin',
+    Element: <SignIn />,
+    search: '?',
+    hidden: true,
+    private: false,
+  },
+  {
+    id: 5,
+    title: 'SignUp',
+    path: '/signup',
+    Element: <Generic />,
+    search: '?',
+    hidden: true,
     private: false,
   },
 ];

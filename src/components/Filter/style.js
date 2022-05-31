@@ -45,6 +45,7 @@ Advanced.Title = styled.div`
 const Section = styled.div`
   display: flex;
   margin-bottom: 20px;
+  gap: 20px;
 `;
 const BottomSection = styled.div`
   display: flex;
@@ -52,5 +53,6 @@ const BottomSection = styled.div`
   align-items: center;
   height: 84px;
   background: #f6f8f9;
+  gap: 20px;
 `;
 export { Wrapper, Container, Icon, Advanced, Section, BottomSection };

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { ReactComponent as Arrow } from '../../assets/icons/ArrowIcon.svg';
+import { ReactComponent as Arrow } from '../../../assets/icons/ArrowIcon.svg';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-bottom: 48px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -13,8 +14,8 @@ const Wrapper = styled.div`
 `;
 const Carousel = styled.div`
   display: flex;
-
-  max-width: 1140px;
+  padding: 0px 130px;
+  max-width: 1440px;
   .alice-carousel__prev-btn {
     display: none;
   }

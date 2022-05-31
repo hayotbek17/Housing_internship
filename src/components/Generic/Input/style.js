@@ -6,7 +6,8 @@ const Container = styled.input`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  padding-left: ${({ pl }) => `${pl}px` || `15px`};
+  padding-left: 15px;
+  padding-left: ${({ pl }) => `${pl}px` || '15px'};
   display: flex;
   justify-content: center;
   align-items: center;

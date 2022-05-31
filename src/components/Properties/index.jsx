@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { useLocation } from 'react-router-dom';
+
 import Card from '../Card';
 import Filter from '../Filter';
 import { Container, Result, Title, Wrapper } from './style';
 const { REACT_APP_BASE_URL: url } = process.env;
 export const Properties = () => {
   const [data, setData] = useState([]);
+  const { search } = useLocation();
 
   useQuery(
-    'get data',
+    ['get data', search],
     () => {
-      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
+      return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json());
     },
     {
       onSuccess: (res) => {
-        setData(res?.dataList[0]);
+        setData(res?.data || []);
       },
     },
   );
-  console.log(data, 'res');
+
   return (
     <Container>
       <Filter />
@@ -29,9 +32,12 @@ export const Properties = () => {
             Siz orzu qildan va siz izlagan arzon,qulay uylar
           </div>
         </Title>
-        <div className='description'>{data.length} Total</div>
+        <Wrapper.Title>
+          <div className='description'>{data?.length} Total</div>
+          <div className='description'>{data?.length} Total</div>
+        </Wrapper.Title>
         <Result>
-          {data.map((value) => {
+          {data?.map((value) => {
             return <Card key={value.id} info={value} />;
           })}
         </Result>

@@ -10,11 +10,12 @@ import {
   CardTitle,
 } from './style';
 import nouser from '../../assets/img/nouser.jpg';
-import house from '../../assets/img/house.png';
+// import house from '../../assets/img/house.png';
+import noimg2 from '../../assets/img/noimg2.jpeg';
 export const Card = ({ info, mr }) => {
   return (
     <Container mr={mr}>
-      <Img src={info?.attachments[0]?.imgPath || house} />
+      <Img src={info?.attachments[0]?.imgPath || noimg2} />
 
       <Infowrapper>
         <User>
@@ -23,7 +24,7 @@ export const Card = ({ info, mr }) => {
 
         <CardTitle className='subtitle'>{info?.description}</CardTitle>
         <CardTitle className='description'>
-          {info?.name || 'hosue'},{info?.adaress || 'address'},
+          {info?.name || 'house'},{info?.adaress || 'address'},
           {info?.city || 'city'},{info?.country || 'country'}
         </CardTitle>
         <Info>

@@ -1,8 +1,10 @@
 import React from 'react';
+import Choose from './Choose';
 import Filter from '../Filter';
-import Recommended from '../Recommended';
+import Recommended from './Recommended';
 import Carousel from './Carousel';
 import { Container } from './style';
+import Categories from './Categories';
 
 export const Home = () => {
   return (
@@ -10,6 +12,8 @@ export const Home = () => {
       <Filter />
       <Carousel />
       <Recommended />
+      <Choose />
+      <Categories />
     </Container>
   );
 };

@@ -1,21 +1,28 @@
 import styled from 'styled-components';
-import { Carousel } from 'antd';
 import { ReactComponent as Arrow } from '../../../assets/icons/ArrowIcon.svg';
-
-const Wrapper = styled.div`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  padding-bottom: 96px;
-  width: 100%;
+
+  margin: 96px 0px 48px 0px;
 `;
-const Container = styled(Carousel)`
-  width: 100%;
-  height: 570px;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
 `;
-const Img = styled.img`
-  background-color: black;
-  width: 100%;
-  height: fit-content;
-  height: 570px;
+const Carousel = styled.div`
+  display: flex;
+  padding: 0px 130px;
+  max-width: 1440px;
+  .alice-carousel__prev-btn {
+    display: none;
+  }
+  .alice-carousel__next-btn {
+    display: none;
+  }
 `;
 
 const Icon = styled.div``;
@@ -25,19 +32,19 @@ Icon.Left = styled(Arrow)`
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   top: 43%;
-  left: 20px;
+  left: 25px;
   color: white;
 
-  background-color: white;
+  background-color: black;
   padding: 12px;
   opacity: 0.7;
   border-radius: 50%;
   z-index: 999;
   & path {
-    fill: #0d263b;
+    fill: white;
   }
   :hover {
     opacity: 0.97;
@@ -49,25 +56,24 @@ Icon.Right = styled(Arrow)`
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   top: 43%;
-  right: 20px;
+  right: 25px;
 
   transform: rotate(180deg);
   color: white;
-  background-color: white;
+  background-color: black;
   padding: 12px;
   opacity: 0.7;
   border-radius: 50%;
   z-index: 999;
   & path {
-    fill: #0d263b;
+    fill: white;
   }
   :hover {
     opacity: 0.97;
   }
   cursor: pointer;
 `;
-
-export { Container, Img, Icon, Wrapper };
+export { Container, Wrapper, Carousel, Icon };

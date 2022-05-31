@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Card from '../Card';
+import Card from '../../Card';
 import { Carousel, Container, Icon, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel';
 export const Recommended = () => {
@@ -10,7 +10,7 @@ export const Recommended = () => {
     <Card mr={20} />,
     <Card mr={20} />,
     <Card mr={20} />,
-    <Card mr={20} />, 
+    <Card mr={20} />,
   ];
   const slide = useRef();
   return (

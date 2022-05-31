@@ -7,13 +7,18 @@ import { ReactComponent as Heart } from '../../assets/icons/heart.svg';
 import { ReactComponent as Resize } from '../../assets/icons/resize.svg';
 const Container = styled.div`
   background: #ffffff;
-  max-width: 381px;
+  max-width: 400px;
   min-width: 280px;
   flex-grow: 10;
   height: 429px;
   border: 1px solid #e6e9ec;
   border-radius: 3px;
   margin-right: ${({ mr }) => mr && `${mr}px`};
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
 `;
 const Img = styled.img`
   min-height: 220px;
