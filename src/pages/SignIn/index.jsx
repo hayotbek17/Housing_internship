@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Wrapper } from './styled';
 import { Button, Input } from '../../components/Generic';
-import { useQuery } from 'react-query';
+// import { useQuery } from 'react-query';
 import { Checkbox } from 'antd';
 const SignIn = () => {
   // const EmailRef = useRef();

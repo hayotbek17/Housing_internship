@@ -9,13 +9,13 @@ import {
 } from './style';
 import { Input, Button } from '../Generic/';
 import { Popover } from 'antd';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import UseReplace from '../../hooks/useReplace';
 
 export const Filter = () => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   const query = useSearch();
 
   // console.log(UseReplace(), 'Usereplace');
