@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as Arrow } from '../../../assets/icons/ArrowIcon.svg';
+import { ReactComponent as Apartment } from '../../../assets/icons/apartment.svg';
+import Img from '../../../assets/img/categoryhouse.png';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@ const Wrapper = styled.div`
   padding-top: 32px;
 `;
 const Carousel = styled.div`
-  display: flex;
+  /* display: flex; */
   padding: 0px 130px;
   max-width: 1440px;
   .alice-carousel__prev-btn {
@@ -22,6 +24,9 @@ const Carousel = styled.div`
   }
   .alice-carousel__next-btn {
     display: none;
+  }
+  .alice-carousel__stage-item {
+    margin-right: 20px;
   }
 `;
 
@@ -76,4 +81,32 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
 `;
-export { Container, Wrapper, Carousel, Icon };
+Icon.Apartment = styled(Apartment)``;
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 350px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)),
+    url(${Img});
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+    0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 20px;
+  gap: 20px;
+`;
+Card.Title = styled.div`
+  left: 481px;
+  top: 2271px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+`;
+export { Container, Wrapper, Carousel, Icon, Card };

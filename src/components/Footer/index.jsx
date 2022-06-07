@@ -1,5 +1,13 @@
 import React from 'react';
-import { Bottom, Container, Logo, Subtitle, Title, Wrapper } from './style';
+import {
+  Bottom,
+  Container,
+  Logo,
+  SocialIcons,
+  Subtitle,
+  Title,
+  Wrapper,
+} from './style';
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -10,7 +18,35 @@ const Footer = () => {
         <Wrapper.In>
           <Title>Contact Us</Title>
 
-          <Subtitle></Subtitle>
+          <Subtitle>
+            <Logo.PinIcon />
+            329 Queensberry Street, North Melbourne VIC 3051, Australia.
+          </Subtitle>
+
+          <Subtitle>
+            <Logo.PhoneIcon />
+            123 456 7890
+          </Subtitle>
+
+          <Subtitle>
+            <Logo.MailIcon />
+            support@houzing.com
+          </Subtitle>
+
+          <SocialIcons>
+            <a href=''>
+              <SocialIcons.Facebook />
+            </a>
+            <a href=''>
+              <SocialIcons.Twitter />
+            </a>
+            <a href=''>
+              <SocialIcons.Instagram />
+            </a>
+            <a href=''>
+              <SocialIcons.Linkedin />
+            </a>
+          </SocialIcons>
         </Wrapper.In>
         <Wrapper.In>
           <Title>Discover</Title>

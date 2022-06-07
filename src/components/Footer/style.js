@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
+import { ReactComponent as EmailIcon } from '../../assets/icons/email 1.svg';
+import { ReactComponent as PinIcon } from '../../assets/icons/pin.svg';
+import { ReactComponent as PhoneIcon } from '../../assets/icons/phone.svg';
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
 const Container = styled.div`
   background: #0d263b;
   /* height: 417px; */
@@ -54,6 +58,8 @@ const Subtitle = styled.a`
   line-height: 20px;
   color: #ffffff;
   padding-bottom: 20px;
+  display: flex;
+  align-items: center;
 `;
 Logo.Icon = styled(LogoIcon)``;
 Logo.Title = styled.div`
@@ -62,4 +68,42 @@ Logo.Title = styled.div`
   font-weight: 500px;
   color: #ffff;
 `;
-export { Container, Wrapper, Bottom, Logo, Subtitle, Title };
+Logo.MailIcon = styled(EmailIcon)`
+  margin-right: 10px;
+`;
+Logo.PhoneIcon = styled(PhoneIcon)`
+  margin-right: 10px;
+`;
+Logo.PinIcon = styled(PinIcon)`
+  margin-right: 10px;
+`;
+const SocialIcons = styled.div`
+  width: 150px;
+  /* border: 1px solid white; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  padding-top: 40px;
+`;
+
+SocialIcons.Facebook = styled(BsFacebook)`
+  color: white;
+  height: 20px;
+  width: 20px;
+`;
+SocialIcons.Twitter = styled(BsTwitter)`
+  color: white;
+  height: 20px;
+  width: 20px;
+`;
+SocialIcons.Instagram = styled(BsInstagram)`
+  color: white;
+  height: 20px;
+  width: 20px;
+`;
+SocialIcons.Linkedin = styled(BsLinkedin)`
+  color: white;
+  height: 20px;
+  width: 20px;
+`;
+export { Container, Wrapper, Bottom, Logo, Subtitle, Title, SocialIcons };

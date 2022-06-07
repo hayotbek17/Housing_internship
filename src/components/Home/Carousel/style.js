@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 const Container = styled(Carousel)`
+  position: relative;
   width: 100%;
   height: 570px;
 `;
@@ -69,5 +70,11 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
 `;
-
-export { Container, Img, Icon, Wrapper };
+const Opacity = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+`;
+export { Container, Img, Icon, Wrapper, Opacity };

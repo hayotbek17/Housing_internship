@@ -6,7 +6,7 @@ import Carousel from './Carousel';
 import { Container } from './style';
 import Categories from './Categories';
 
-export const Home = () => {
+const Home = () => {
   return (
     <Container>
       <Filter />

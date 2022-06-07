@@ -15,7 +15,7 @@ export const Input = forwardRef(
       onChange,
       placeholder,
       name,
-      defaultValue,
+      value,
     },
     ref,
   ) => {
@@ -24,7 +24,7 @@ export const Input = forwardRef(
         <Icon>{children}</Icon>
         <Container
           ref={ref}
-          defaultValue={defaultValue}
+          value={value}
           name={name}
           onChange={onChange}
           placeholder={placeholder}

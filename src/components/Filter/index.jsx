@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Icon,
   Container,
@@ -12,19 +12,66 @@ import { Popover } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import useSearch from '../../hooks/useSearch';
 import UseReplace from '../../hooks/useReplace';
+import { useQuery } from 'react-query';
+const { REACT_APP_BASE_URL: url } = process.env;
 
-export const Filter = () => {
+const Filter = () => {
   const navigate = useNavigate();
-  // const { pathname } = useLocation();
   const query = useSearch();
+  const [list, setList] = useState([]);
+  useQuery(
+    '',
+    () => {
+      return fetch(`${url}/v1/categories/list`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      }).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        console.log(res);
 
-  // console.log(UseReplace(), 'Usereplace');
+        setList(res?.data || []);
+      },
+    },
+  );
+
+  const [state, setState] = useState({
+    counrty: query.get('country'),
+    region: query.get('region'),
+    city: query.get('city'),
+    zip_code: query.get('zip_code'),
+    adress: query.get('adress'),
+    houses_name: query.get('houses_name'),
+    rooms: query.get('rooms'),
+    min_price: query.get('min_price'),
+    max_price: query.get('max_price'),
+  });
 
   const onChange = ({ target }) => {
     const { value, name } = target;
     navigate(`${UseReplace(name, value)}`);
+    setState({ ...state, [name]: [value] });
   };
-
+  const onSelect = ({ target }) => {
+    navigate(`${UseReplace('category_id', target?.value)}`);
+  };
+  const onClear = () => {
+    setState({
+      counrty: '',
+      region: '',
+      city: '',
+      zip_code: '',
+      adress: '',
+      houses_name: '',
+      rooms: '',
+      min_price: '',
+      max_price: '',
+    });
+    navigate('/properties');
+  };
+  console.log(state, 'state');
   const advansedSearch = (
     <Advanced>
       <Advanced.Title>Adress</Advanced.Title>
@@ -33,25 +80,25 @@ export const Filter = () => {
           placeholder={'Country'}
           onChange={onChange}
           name={'country'}
-          defaultValue={query.get('country')}
+          value={state.counrty}
         />
         <Input
           placeholder={'Region'}
           onChange={onChange}
           name={'region'}
-          defaultValue={query.get('region')}
+          value={state.region}
         />
         <Input
           onChange={onChange}
           name={'city'}
-          defaultValue={query.get('city')}
+          value={state.city}
           placeholder={'City'}
         />
         <Input
           placeholder={'Zip Code  '}
           onChange={onChange}
           name={'zip_code'}
-          defaultValue={query.get('zip_code')}
+          value={state.zip_code}
         />
       </Section>
       <Advanced.Title>Apartment info</Advanced.Title>
@@ -60,19 +107,19 @@ export const Filter = () => {
           placeholder={'Adress'}
           onChange={onChange}
           name={'adress'}
-          defaultValue={query.get('adress')}
+          value={state.adress}
         />
         <Input
           placeholder={'Houses Name'}
           onChange={onChange}
           name={'houses_name'}
-          defaultValue={query.get('houses_name')}
+          value={state.houses_name}
         />
         <Input
           placeholder={'Rooms'}
           onChange={onChange}
           name={'rooms'}
-          defaultValue={query.get('rooms')}
+          value={state.rooms}
         />
       </Section>
       <Advanced.Title>Price</Advanced.Title>
@@ -81,16 +128,26 @@ export const Filter = () => {
           placeholder={'Min Price'}
           onChange={onChange}
           name={'min_price'}
-          defaultValue={query.get('min_price')}
+          value={state.min_price}
         />
-        <Input placeholder={'Max Price'} />{' '}
+        <Input
+          placeholder={'Max Price'}
+          onChange={onChange}
+          name={'max_price'}
+          value={state.max_price}
+        />
+        <select defaultValue={query.get('category_id')} onChange={onSelect}>
+          {list.map((value) => {
+            return <option value={value.id}>{value.name}</option>;
+          })}
+        </select>
       </Section>
       <BottomSection>
         <Button width={'128px'} type={'primary'}>
           Cancel
         </Button>
-        <Button width={'128px'} type={'secondary'}>
-          Submit
+        <Button width={'128px'} type={'secondary'} onClick={onClear}>
+          Reset
         </Button>
       </BottomSection>
     </Advanced>
