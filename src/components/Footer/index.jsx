@@ -34,16 +34,16 @@ const Footer = () => {
           </Subtitle>
 
           <SocialIcons>
-            <a href=''>
+            <a href='https://www.instagram.com/'>
               <SocialIcons.Facebook />
             </a>
-            <a href=''>
+            <a href='https://www.instagram.com/'>
               <SocialIcons.Twitter />
             </a>
-            <a href=''>
+            <a href='https://www.instagram.com/'>
               <SocialIcons.Instagram />
             </a>
-            <a href=''>
+            <a href='https://www.instagram.com/'>
               <SocialIcons.Linkedin />
             </a>
           </SocialIcons>
