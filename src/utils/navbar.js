@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 import Properties from '../pages/Properties';
 import SignIn from '../pages/SignIn';
 export const navbar = [
-  { 
+  {
     id: 1,
     title: 'Home',
     path: '/home',
@@ -28,8 +28,8 @@ export const navbar = [
     path: '/properties/:id',
     Element: <SelectedHouse />,
     search: '?',
-    useParams:true,
-    hidden: false,
+    useParams: true,
+    hidden: true,
     private: false,
   },
   {
