@@ -12,9 +12,9 @@ import {
 import nouser from '../../assets/img/nouser.jpg';
 // import house from '../../assets/img/house.png';
 import noimg2 from '../../assets/img/noimg2.jpeg';
-export const Card = ({ info, mr }) => {
+export const Card = ({ info, mr, onClick }) => {
   return (
-    <Container mr={mr}>
+    <Container onClick={onClick} mr={mr}>
       <Img src={info?.attachments[0]?.imgPath || noimg2} />
 
       <Infowrapper>

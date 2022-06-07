@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import Card from '../Card';
 import Filter from '../Filter';
 import { Container, Result, Title, Wrapper } from './style';
 const { REACT_APP_BASE_URL: url } = process.env;
 export const Properties = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const { search } = useLocation();
-
+  const onSelect = () => {
+    navigate('/properties/1');
+  };
   useQuery(
     ['get data', search],
     () => {
@@ -39,7 +42,7 @@ export const Properties = () => {
         </Wrapper.Title>
         <Result>
           {data?.map((value) => {
-            return <Card key={value.id} info={value} />;
+            return <Card onClick={onSelect} key={value.id} info={value} />;
           })}
         </Result>
       </Wrapper>
