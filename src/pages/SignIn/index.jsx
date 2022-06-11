@@ -25,8 +25,7 @@ const SignIn = () => {
   });
 
   const onSubmit = () => {
-    console.log(email);
-    console.log(password);
+    
     mutate(
       'hey',
       {
@@ -38,7 +37,7 @@ const SignIn = () => {
       },
       {
         onError: (res) => {
-          console.log(res, 'error');
+       
         },
       },
     );

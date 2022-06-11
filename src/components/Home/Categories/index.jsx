@@ -36,7 +36,7 @@ const Categories = () => {
     },
     {
       onSuccess: (res) => {
-        console.log(res);
+        
         let response = res?.data?.map((value) => (
           <CategoryCard title={value.name} id={value.id} />
         ));

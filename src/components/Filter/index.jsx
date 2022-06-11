@@ -30,7 +30,7 @@ const Filter = () => {
     },
     {
       onSuccess: (res) => {
-        console.log(res);
+       
 
         setList(res?.data || []);
       },
@@ -71,7 +71,7 @@ const Filter = () => {
     });
     navigate('/properties');
   };
-  console.log(state, 'state');
+
   const advansedSearch = (
     <Advanced>
       <Advanced.Title>Adress</Advanced.Title>
@@ -138,7 +138,11 @@ const Filter = () => {
         />
         <select defaultValue={query.get('category_id')} onChange={onSelect}>
           {list.map((value) => {
-            return <option value={value.id}>{value.name}</option>;
+            return (
+              <option key={value.id} value={value.id}>
+                {value.name}
+              </option>
+            );
           })}
         </select>
       </Section>

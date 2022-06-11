@@ -9,11 +9,12 @@ const { REACT_APP_BASE_URL: url } = process.env;
 export const Properties = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+
   const { search } = useLocation();
-  const onSelect = () => {
-    navigate('/properties/1');
+  const onSelect = (id) => {
+    navigate(`/properties/${id}`);
   };
-  useQuery(
+  const { isLoading, isRefetching } = useQuery(
     ['get data', search],
     () => {
       return fetch(`${url}/v1/houses/list${search}`).then((res) => res.json());
@@ -31,18 +32,27 @@ export const Properties = () => {
       <Filter />
       <Wrapper>
         <Title>
-          <div className='title center'>Properties</div>
+          <div className='title center'>
+            {isLoading || isRefetching ? 'Loading...' : 'Properties'}
+          </div>
           <div className='description center'>
             Siz orzu qildan va siz izlagan arzon,qulay uylar
           </div>
         </Title>
+
         <Wrapper.Title>
           <div className='description'>{data?.length} Total</div>
           <div className='description'>{data?.length} Total</div>
         </Wrapper.Title>
         <Result>
           {data?.map((value) => {
-            return <Card onClick={onSelect} key={value.id} info={value} />;
+            return (
+              <Card
+                onClick={() => onSelect(value.id)}
+                key={value.id}
+                info={value}
+              />
+            );
           })}
         </Result>
       </Wrapper>
