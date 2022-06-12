@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 const { REACT_APP_BASE_URL: url } = process.env;
 const SignIn = () => {
-  // const EmailRef = useRef();
-  // const PasswordRef = useRef();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +23,6 @@ const SignIn = () => {
   });
 
   const onSubmit = () => {
-    
     mutate(
       'hey',
       {
@@ -36,9 +33,7 @@ const SignIn = () => {
         },
       },
       {
-        onError: (res) => {
-       
-        },
+        onError: (res) => {},
       },
     );
   };
@@ -47,14 +42,13 @@ const SignIn = () => {
       <Wrapper>
         <div className='subtitle'>Sign In</div>
         <Input
-          onChange={({ target }) => setEmail(target?.value)}
           placeholder={'Email'}
+          onChange={({ target: { value } }) => setEmail(value)}
           value={email}
         />
         <Input
-          onChange={({ target }) => setPassword(target?.value)}
           placeholder={'Password'}
-          value={password}
+          onChange={({ target: { value } }) => setPassword(value)}
         />
         <Button onClick={onSubmit} type={'secondary'}>
           Login

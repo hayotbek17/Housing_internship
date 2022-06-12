@@ -16,6 +16,7 @@ export const Input = forwardRef(
       placeholder,
       name,
       value,
+      defaultValue,
     },
     ref,
   ) => {
@@ -32,6 +33,7 @@ export const Input = forwardRef(
           width={width}
           height={height}
           onClick={onClick}
+          defaultValue={defaultValue}
         />
       </Wrapper>
     );
