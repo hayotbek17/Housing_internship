@@ -3,6 +3,7 @@ import Generic from '../pages/Generic';
 import Home from '../pages/Home';
 import Properties from '../pages/Properties';
 import SignIn from '../pages/SignIn';
+import Profile from '../pages/Profile';
 export const navbar = [
   {
     id: 1,
@@ -58,5 +59,15 @@ export const navbar = [
     search: '?',
     hidden: true,
     private: false,
+  },
+  {
+    id: 5,
+    title: 'Profile',
+    path: '/profile',
+    Element: <Profile />,
+    search: '?',
+    hidden: true,
+    useParams: true,
+    private: true,
   },
 ];

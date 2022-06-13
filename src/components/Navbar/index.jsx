@@ -8,11 +8,44 @@ import {
   Link,
   Logo,
 } from './styled';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../Generic';
 import Footer from '../Footer';
 export const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  var button;
+
+  const logout = () => {
+    navigate('/home');
+    localStorage.removeItem('token');
+  };
+  localStorage.getItem('token')
+    ? (button = (
+        <Button
+          type={'profile'}
+          onClick={() => navigate('/profile')}
+          width={'120px'}
+        >
+          <FaUser />
+          Profile
+        </Button>
+      ))
+    : (button = (
+        <Button onClick={() => navigate('/signin')} width={'120px'}>
+          Login
+        </Button>
+      ));
+
+  location.pathname === '/profile' &&
+    (button = (
+      <Button onClick={logout} type={'logout'} width={'120px'}>
+        Log out
+      </Button>
+    ));
+  console.log(location);
+
   return (
     <Wrapper>
       <Container>
@@ -32,9 +65,8 @@ export const Navbar = () => {
               );
             })}
           </NavbarBody>
-          <Button onClick={() => navigate('/signin')} width={'120px'}>
-            Login
-          </Button>
+
+          {button}
         </NavbarWrapper>
       </Container>
       <Outlet />

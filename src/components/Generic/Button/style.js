@@ -13,6 +13,19 @@ const getType = (type) => {
         background: '#0061DF',
         color: '#FFFFFF',
       };
+    case 'profile':
+      return {
+        border: '1px solid #0D263B',
+        background: 'white',
+        color: '#0D263B',
+        gap: '5px',
+      };
+    case 'logout':
+      return {
+        border: '1px solid #0D263B',
+        background: '#bf1111',
+        color: 'white',
+      };
     default:
       return {
         border: '1px solid #E6E9EC',

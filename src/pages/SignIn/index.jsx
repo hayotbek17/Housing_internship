@@ -29,7 +29,7 @@ const SignIn = () => {
         onSuccess: (res) => {
           localStorage.setItem('token', res?.authenticationToken);
 
-          if (res?.authenticationToken) navigate('/home');
+          if (res?.authenticationToken) navigate('/profile');
         },
       },
       {

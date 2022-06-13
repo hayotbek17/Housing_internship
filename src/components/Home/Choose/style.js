@@ -9,6 +9,7 @@ const Container = styled.div`
   background: #f5f7fc;
   height: 434px;
   width: 100%;
+  align-items: center;
   padding: 0px 130px;
 `;
 
@@ -22,7 +23,7 @@ const Tekst = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-
+  max-width: 1440px;
   justify-content: space-around;
 
   height: 230px;
