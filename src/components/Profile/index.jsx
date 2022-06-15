@@ -18,8 +18,9 @@ const Profile = () => {
   const onDelete = (id) => {
     mutate(id, {
       onSuccess: (res) => (
-        res.status === 200 && refetch(), message.success('Deleted')
-      ),
+        res.status === 200 && refetch()
+      //   message.success('Deleted')
+      // ),
     });
   };
   const navigate = useNavigate();
