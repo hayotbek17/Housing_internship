@@ -11,16 +11,15 @@ import {
   Wrapper,
 } from './style';
 import { useNavigate } from 'react-router-dom';
-import { message } from 'antd';
+// import { message } from 'antd';
 import { Button } from '../Generic';
 const { REACT_APP_BASE_URL: url } = process.env;
 const Profile = () => {
   const onDelete = (id) => {
     mutate(id, {
-      onSuccess: (res) => (
+      onSuccess: (res) =>
         res.status === 200 && refetch(),
         // message.success('Deleted')
-      ),
     });
   };
   const navigate = useNavigate();
