@@ -17,8 +17,8 @@ const MyCard = ({ info, onClick }) => {
         <Img src={info.attachments[0]?.imgPath} />
         <Title>
           <div>
-            <div className='subtitle'>New Apartment Nice Wiew</div>
-            <div className='desription'>Quincy St, Brooklyn, NY, USA</div>
+            <div className='subtitle'>{info?.description}</div>
+            <div className='desription'>{info?.name}</div>
           </div>
           <div>
             <div className='deleted'>${info?.salePrice}/mo</div>

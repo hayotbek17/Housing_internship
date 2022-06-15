@@ -42,11 +42,13 @@ const SignIn = () => {
       <Wrapper>
         <div className='subtitle'>Sign In</div>
         <Input
+          type={'email'}
           placeholder={'Email'}
           onChange={({ target: { value } }) => setEmail(value)}
           value={email}
         />
         <Input
+          type={'password'}
           placeholder={'Password'}
           onChange={({ target: { value } }) => setPassword(value)}
         />

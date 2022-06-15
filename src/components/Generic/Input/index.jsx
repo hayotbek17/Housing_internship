@@ -17,6 +17,7 @@ export const Input = forwardRef(
       name,
       value,
       defaultValue,
+      type,
     },
     ref,
   ) => {
@@ -24,6 +25,7 @@ export const Input = forwardRef(
       <Wrapper mr={mr} ml={ml} mt={mt} mb={mb}>
         <Icon>{children}</Icon>
         <Container
+          type={type}
           ref={ref}
           value={value}
           name={name}
