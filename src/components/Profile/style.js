@@ -2,7 +2,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
   padding-top: 34px;
   padding: 34px 130px 96px 130px;
   width: 100%;
@@ -41,4 +41,8 @@ const Details = styled.div`
 const Title = styled.div`
   flex: 1;
 `;
-export { Wrapper, Container, ConIn, Listing, Details, Title };
+const Head = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export { Wrapper, Container, ConIn, Listing, Details, Title, Head };

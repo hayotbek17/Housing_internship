@@ -1,7 +1,16 @@
 import React from 'react';
-import { Container, Details, Img, Listing, Sale, Title, Title1 } from './style';
+import {
+  Container,
+  Details,
+  Icon,
+  Img,
+  Listing,
+  Sale,
+  Title,
+  Title1,
+} from './style';
 
-const MyCard = ({ info }) => {
+const MyCard = ({ info, onClick }) => {
   return (
     <Container>
       <Listing>
@@ -22,7 +31,12 @@ const MyCard = ({ info }) => {
         <Title1 className='description  '>30 December 2022</Title1>
         <Title1 className='description  '>Pending</Title1>
         <Title1 className='description  '>5933</Title1>
-        <Title1 className='description  '>5933</Title1>
+        <Title1 className='description  '>
+          <Icon>
+            <Icon.Edit />
+            <Icon.Trash onClick={onClick} />
+          </Icon>
+        </Title1>
       </Details>
     </Container>
   );

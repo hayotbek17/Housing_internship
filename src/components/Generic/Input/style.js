@@ -14,7 +14,12 @@ const Container = styled.input`
   height: ${({ height }) => height || '44px'};
   width: ${({ width }) => width || '100%'};
   border-radius: 2px;
-  border: 1px solid #e6e9ec;
+  border: 0px solid #e6e9ec;
+  border-bottom: 2px solid #e6e9ec;
+  :focus {
+    outline: none;
+    border-bottom: 2px solid #0061df;
+  }
 `;
 
 const Wrapper = styled.div`

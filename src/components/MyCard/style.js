@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-
+import { ReactComponent as Edit } from '../../assets/icons/edit.svg';
+import { ReactComponent as Trash } from '../../assets/icons/trash.svg';
 const Container = styled.div`
   display: flex;
   height: 131px;
@@ -54,8 +55,29 @@ const Details = styled.div`
   height: 100%;
   width: 100%;
 `;
+
 const Title1 = styled.div`
   flex: 1;
   text-align: center;
 `;
-export { Container, Img, Title, Sale, Listing, Details, Title1 };
+
+const Icon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+`;
+
+Icon.Trash = styled(Trash)`
+  background: #f6f8f9;
+  cursor: pointer;
+  :active {
+    & path {
+      fill: red;
+    }
+  }
+`;
+Icon.Edit = styled(Edit)`
+  cursor: pointer;
+`;
+export { Container, Img, Title, Sale, Listing, Details, Title1, Icon };

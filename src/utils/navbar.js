@@ -3,7 +3,9 @@ import Generic from '../pages/Generic';
 import Home from '../pages/Home';
 import Properties from '../pages/Properties';
 import SignIn from '../pages/SignIn';
+import Register from '../pages/Register';
 import Profile from '../pages/Profile';
+import AddNew from '../pages/AddNew';
 export const navbar = [
   {
     id: 1,
@@ -61,7 +63,7 @@ export const navbar = [
     private: false,
   },
   {
-    id: 5,
+    id: 6,
     title: 'Profile',
     path: '/profile',
     Element: <Profile />,
@@ -69,5 +71,24 @@ export const navbar = [
     hidden: true,
     useParams: true,
     private: true,
+  },
+  {
+    id: 7,
+    title: 'AddNew',
+    path: '/profile/add',
+    Element: <AddNew />,
+    search: '?',
+    hidden: true,
+    useParams: true,
+    private: true,
+  },
+  {
+    id: 8,
+    title: 'Registration',
+    path: '/register',
+    Element: <Register />,
+    search: '?',
+    hidden: true,
+    private: false,
   },
 ];

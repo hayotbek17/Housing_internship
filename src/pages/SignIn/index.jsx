@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Wrapper } from './styled';
+import { Container, Wrapper, Register } from './styled';
 import { Button, Input } from '../../components/Generic';
 // import { useQuery } from 'react-query';
 import { Checkbox } from 'antd';
@@ -57,6 +57,12 @@ const SignIn = () => {
         <Checkbox>
           <div className='description'>Remember me</div>
         </Checkbox>
+        <Register
+          className={'description'}
+          onClick={() => navigate('/register')}
+        >
+          Registration
+        </Register>
       </Wrapper>
     </Container>
   );

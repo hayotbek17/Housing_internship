@@ -5,11 +5,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 524px;
+  height: 100%;
 `;
 const Wrapper = styled.div`
   width: 580px;
-  height: 376px;
+  height: 666px;
   background: #ffffff;
   border: 1px solid #e6e9ec;
   box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-const Register = styled.div`
+const Login = styled.div`
   color: #0061df;
   display: flex;
   justify-content: flex-end;
@@ -28,4 +28,4 @@ const Register = styled.div`
     color: #bf1111;
   }
 `;
-export { Container, Wrapper, Register };
+export { Container, Wrapper, Login };
