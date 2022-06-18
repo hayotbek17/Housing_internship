@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -28,4 +28,29 @@ const Result = styled.div`
   width: 100%;
   max-width: 1440px;
 `;
-export { Container, Title, Wrapper, Result };
+const Animation = keyframes`
+100%{
+  transform: rotate(360deg);
+}
+`;
+const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryColor);
+  margin: 60px 0px 70px 0px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+`;
+Loading.In = styled.div`
+  background-color: var(--primaryColor);
+  height: 50px;
+  width: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid white;
+  border-radius: 50%;
+  animation: ${Animation} 0.7s linear infinite;
+`;
+
+export { Container, Title, Wrapper, Result, Loading };

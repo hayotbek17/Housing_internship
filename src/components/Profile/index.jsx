@@ -7,6 +7,7 @@ import {
   Details,
   Head,
   Listing,
+  Loading,
   Title,
   Wrapper,
 } from './style';
@@ -65,7 +66,11 @@ const Profile = () => {
               <Title className=''>Action</Title>
             </Details>
           </ConIn>
-          {isLoading && <h1>loading...</h1>}
+          {isLoading && (
+            <Loading>
+              <Loading.In />
+            </Loading>
+          )}
 
           {data?.data?.map((info) => {
             return (

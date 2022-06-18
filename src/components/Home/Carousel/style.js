@@ -70,11 +70,11 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
 `;
-const Opacity = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-color: black;
-`;
-export { Container, Img, Icon, Wrapper, Opacity };
+// const Opacity = styled.div`
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   opacity: 0.5;
+//   background-color: black;
+// `;
+export { Container, Img, Icon, Wrapper };
