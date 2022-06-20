@@ -1,4 +1,7 @@
+import { message } from 'antd';
 import React from 'react';
+import { useMutation } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
   Details,
@@ -9,8 +12,34 @@ import {
   Title,
   Title1,
 } from './style';
+const { REACT_APP_BASE_URL: url } = process.env;
+const MyCard = ({ info, refetch }) => {
+  const navigate = useNavigate();
+  const onEdit = (id) => {
+    navigate(`/profile/add/${id}`);
+  };
 
-const MyCard = ({ info, onClick }) => {
+  const onDelete = (id) => {
+    mutate(id, {
+      onSuccess: (res) => {
+        if (res?.status) {
+          refetch();
+          message.success('deleted');
+        } else {
+          message.error('something is wrong');
+        }
+      },
+    });
+  };
+  const { mutate } = useMutation((id) => {
+    return fetch(`${url}/v1/houses/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')} `,
+      },
+    });
+  });
   return (
     <Container>
       <Listing>
@@ -33,8 +62,8 @@ const MyCard = ({ info, onClick }) => {
         <Title1 className='description  '>5933</Title1>
         <Title1 className='description  '>
           <Icon>
-            <Icon.Edit />
-            <Icon.Trash onClick={onClick} />
+            <Icon.Edit onClick={() => onEdit(info.id)} />
+            <Icon.Trash onClick={() => onDelete(info.id)} />
           </Icon>
         </Title1>
       </Details>

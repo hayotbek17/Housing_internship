@@ -1,6 +1,6 @@
 import React from 'react';
 import MyCard from '../MyCard';
-import { useMutation, useQuery } from 'react-query';
+import {  useQuery } from 'react-query';
 import {
   ConIn,
   Container,
@@ -16,22 +16,9 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../Generic';
 const { REACT_APP_BASE_URL: url } = process.env;
 const Profile = () => {
-  const onDelete = (id) => {
-    mutate(id, {
-      onSuccess: (res) => res.status === 200 && refetch(),
-      // message.success('Deleted')
-    });
-  };
   const navigate = useNavigate();
-  const { mutate } = useMutation((id) => {
-    return fetch(`${url}/v1/houses/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')} `,
-      },
-    });
-  });
+
+  
 
   const { data, isLoading, refetch } = useQuery('data', () => {
     return fetch(`${url}/v1/houses/me`, {
@@ -42,7 +29,7 @@ const Profile = () => {
       },
     }).then((res) => res.json());
   });
-  console.log(data?.data);
+
   if (localStorage.getItem('token')) {
     return (
       <Wrapper>
@@ -75,9 +62,10 @@ const Profile = () => {
           {data?.data?.map((info) => {
             return (
               <MyCard
+                refetch={refetch}
                 key={info.id}
                 info={info}
-                onClick={() => onDelete(info.id)}
+               
               />
             );
           })}

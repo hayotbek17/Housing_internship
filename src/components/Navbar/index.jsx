@@ -44,7 +44,7 @@ export const Navbar = () => {
         Log out
       </Button>
     ));
-  console.log(location);
+ 
 
   return (
     <Wrapper>

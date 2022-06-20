@@ -2,7 +2,7 @@ import React from 'react';
 import { Body, Container, Head, Icons, Info } from './style';
 
 const Description = ({ data }) => {
-  console.log(data);
+ 
   return (
     <Container>
       <Head>

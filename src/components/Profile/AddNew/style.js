@@ -29,4 +29,6 @@ const Section = styled.div`
     margin-top: 40px;
   }
 `;
-export { Container, Section, Wrapper };
+
+
+export { Container, Section, Wrapper,  };

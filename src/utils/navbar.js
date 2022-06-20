@@ -84,6 +84,16 @@ export const navbar = [
   },
   {
     id: 8,
+    title: 'AddNew',
+    path: '/profile/add/:id',
+    Element: <AddNew />,
+    search: '?',
+    hidden: true,
+    useParams: true,
+    private: true,
+  },
+  {
+    id: 9,
     title: 'Registration',
     path: '/register',
     Element: <Register />,
