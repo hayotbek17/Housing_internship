@@ -4,7 +4,7 @@ import { ReactComponent as Arrow } from '../../../assets/icons/ArrowIcon.svg';
 
 const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 96px;
+  margin-bottom: 96px;
   width: 100%;
 `;
 const Container = styled(Carousel)`
@@ -70,11 +70,44 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
 `;
-// const Opacity = styled.div`
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   opacity: 0.5;
-//   background-color: black;
-// `;
-export { Container, Img, Icon, Wrapper };
+const Opacity = styled.div`
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+`;
+const Titles = styled.div`
+  position: absolute;
+  z-index: 999;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 36px;
+  /* identical to box height, or 129% */
+
+  text-align: center;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+Titles.In = styled.div`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 30px 0px;
+
+  /* identical to box height, or 150% */
+
+  color: #ffffff;
+`;
+export { Container, Img, Icon, Wrapper, Opacity, Titles };

@@ -30,7 +30,8 @@ const Wrapper = styled.div`
 `;
 Wrapper.Card = styled.div`
   text-align: center;
-  max-width: 235px;
+  max-width: 250px;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;

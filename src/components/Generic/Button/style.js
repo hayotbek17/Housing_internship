@@ -28,7 +28,7 @@ const getType = (type) => {
       };
     default:
       return {
-        border: '1px solid #E6E9EC',
+        border: '1px solid white',
         color: '#FFFFFF',
       };
   }
