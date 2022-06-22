@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   border: 1px solid #e6e9ec;
   box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
   border-radius: 3px;
-  padding: 24px 30px 48px 30px;
+  padding: 34px 30px 48px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,4 +28,10 @@ const Login = styled.div`
     color: #bf1111;
   }
 `;
-export { Container, Wrapper, Login };
+const Icon = styled.div`
+  width: 100%;
+  margin-left: 98%;
+  cursor: pointer;
+`;
+
+export { Container, Wrapper, Login, Icon };

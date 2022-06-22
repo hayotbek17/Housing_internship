@@ -28,4 +28,9 @@ const Register = styled.div`
     color: #bf1111;
   }
 `;
-export { Container, Wrapper, Register };
+const Icon = styled.div`
+  width: 100%;
+  margin-left: 98%;
+  cursor: pointer;
+`;
+export { Container, Wrapper, Register, Icon };

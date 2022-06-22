@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { Container, Wrapper, Register } from './styled';
+import { Container, Wrapper, Register, Icon } from './styled';
 import { Button, Input } from '../../components/Generic';
 // import { useQuery } from 'react-query';
+import { AiFillEye } from 'react-icons/ai';
 import { Checkbox } from 'antd';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 
 const { REACT_APP_BASE_URL: url } = process.env;
 const SignIn = () => {
+  const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { mutate } = useMutation((props) => {
+  const { mutate } = useMutation(() => {
     return fetch(`${url}/public/auth/login`, {
       method: 'POST',
       headers: {
@@ -21,7 +23,9 @@ const SignIn = () => {
       body: JSON.stringify({ email, password }),
     }).then((res) => res.json());
   });
-
+  const handleChange = () => {
+    setVisible(!visible);
+  };
   const onSubmit = () => {
     mutate(
       'hey',
@@ -48,10 +52,13 @@ const SignIn = () => {
           value={email}
         />
         <Input
-          type={'password'}
+          type={visible ? 'password' : 'string'}
           placeholder={'Password'}
           onChange={({ target: { value } }) => setPassword(value)}
         />
+        <Icon onClick={handleChange}>
+          <AiFillEye />
+        </Icon>
         <Button onClick={onSubmit} type={'secondary'}>
           Login
         </Button>
