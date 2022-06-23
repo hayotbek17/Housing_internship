@@ -9,6 +9,13 @@ const Container = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 0px 130px;
+  @media (max-width: 1000px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 760px) {
+
+    
+  }
 `;
 
 const Wrapper = styled.div`

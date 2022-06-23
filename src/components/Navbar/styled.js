@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
+import { ReactComponent as NavIcon } from '../../assets/icons/nav.svg';
+import { ReactComponent as Login } from '../../assets/icons/login.svg';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +20,9 @@ const Container = styled.div`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  @media (max-width: 1000px) {
+    padding: 0px 50px;
+  }
 `;
 const NavbarWrapper = styled.div`
   display: flex;
@@ -31,6 +36,12 @@ const NavbarWrapper = styled.div`
   width: 100%;
   color: #ffffff;
   align-items: center;
+  @media (max-width: 760px) {
+    justify-content: space-between;
+    .Button {
+      display: none;
+    }
+  }
 `;
 const NavbarBody = styled.div`
   display: flex;
@@ -38,6 +49,9 @@ const NavbarBody = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
+  @media (max-width: 760px) {
+    display: none;
+  }
   .active {
     color: #00fff5;
   }
@@ -59,7 +73,32 @@ const Logo = styled.div`
   align-items: center;
   cursor: pointer;
 `;
-
+const Nav = styled(NavIcon)`
+  display: none;
+  cursor: pointer;
+  :active {
+    & path {
+      fill: #00fff5;
+      color: #00fff5;
+    }
+  }
+  @media (max-width: 760px) {
+    display: flex;
+  }
+`;
+const Log = styled(Login)`
+  display: none;
+  cursor: pointer;
+  :active {
+    & path {
+      fill: #00fff5;
+      color: #00fff5;
+    }
+  }
+  @media (max-width: 760px) {
+    display: flex;
+  }
+`;
 Logo.Icon = styled(LogoIcon)``;
 Logo.Title = styled.div`
   margin-left: 11px;
@@ -67,4 +106,4 @@ Logo.Title = styled.div`
   font-weight: 500px;
 `;
 
-export { Wrapper, Container, NavbarWrapper, NavbarBody, Link, Logo };
+export { Wrapper, Container, NavbarWrapper, NavbarBody, Link, Logo, Nav, Log };

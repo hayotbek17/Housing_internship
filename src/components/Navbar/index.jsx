@@ -7,6 +7,8 @@ import {
   NavbarBody,
   Link,
   Logo,
+  Nav,
+  Log,
 } from './styled';
 import { FaUser } from 'react-icons/fa';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -44,12 +46,12 @@ export const Navbar = () => {
         Log out
       </Button>
     ));
- 
 
   return (
     <Wrapper>
       <Container>
         <NavbarWrapper>
+          <Nav />
           <Logo onClick={() => navigate('/home')}>
             <Logo.Icon />
             <Logo.Title>Housing</Logo.Title>
@@ -65,8 +67,8 @@ export const Navbar = () => {
               );
             })}
           </NavbarBody>
-
-          {button}
+          <div className='Button'>{button}</div>
+          <Log />
         </NavbarWrapper>
       </Container>
       <Outlet />
