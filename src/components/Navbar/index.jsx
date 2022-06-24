@@ -9,6 +9,7 @@ import {
   Logo,
   Nav,
   Log,
+  Door,
 } from './styled';
 import { FaUser } from 'react-icons/fa';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -18,7 +19,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   var button;
-
+  var icon;
   const logout = () => {
     navigate('/home');
     localStorage.removeItem('token');
@@ -39,6 +40,10 @@ export const Navbar = () => {
           Login
         </Button>
       ));
+  localStorage.getItem('token')
+    ? (icon = <Log onClick={() => navigate('/profile')} />)
+    : (icon = icon = <Log onClick={() => navigate('/signin')} />);
+  location.pathname === '/profile' && (icon = <Door onClick={logout} />);
 
   location.pathname === '/profile' &&
     (button = (
@@ -68,7 +73,7 @@ export const Navbar = () => {
             })}
           </NavbarBody>
           <div className='Button'>{button}</div>
-          <Log />
+          {icon}
         </NavbarWrapper>
       </Container>
       <Outlet />

@@ -17,9 +17,16 @@ const Img = styled.img`
   width: 100%;
   height: fit-content;
   height: 570px;
+  @media (max-width: 760px) {
+    object-fit: cover;
+  }
 `;
 
-const Icon = styled.div``;
+const Icon = styled.div`
+  @media (max-width: 760px) {
+    display: none;
+  }
+`;
 
 Icon.Left = styled(Arrow)`
   display: flex;
@@ -44,6 +51,9 @@ Icon.Left = styled(Arrow)`
     opacity: 0.97;
   }
   cursor: pointer;
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 Icon.Right = styled(Arrow)`
   display: flex;
@@ -69,6 +79,9 @@ Icon.Right = styled(Arrow)`
     opacity: 0.97;
   }
   cursor: pointer;
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 const Opacity = styled.div`
   z-index: 1;
@@ -89,10 +102,13 @@ const Titles = styled.div`
   font-weight: 600;
   font-size: 44px;
   line-height: 36px;
-  /* identical to box height, or 129% */
-
   text-align: center;
   letter-spacing: -0.02em;
+
+  @media (max-width: 760px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,6 +123,9 @@ Titles.In = styled.div`
   padding: 30px 0px;
 
   /* identical to box height, or 150% */
+  @media (max-width: 760px) {
+    font-size: 14px;
+  }
 
   color: #ffffff;
 `;

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import { ReactComponent as NavIcon } from '../../assets/icons/nav.svg';
 import { ReactComponent as Login } from '../../assets/icons/login.svg';
-
+import { TbDoorExit } from 'react-icons/tb';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,6 +93,7 @@ const Log = styled(Login)`
     & path {
       fill: #00fff5;
       color: #00fff5;
+      background: #00fff5;
     }
   }
   @media (max-width: 760px) {
@@ -105,5 +106,20 @@ Logo.Title = styled.div`
   font-size: 20px;
   font-weight: 500px;
 `;
-
-export { Wrapper, Container, NavbarWrapper, NavbarBody, Link, Logo, Nav, Log };
+const Door = styled(TbDoorExit)`
+  width: 20px;
+  height: 20px;
+  color: red;
+  cursor: pointer;
+`;
+export {
+  Wrapper,
+  Container,
+  NavbarWrapper,
+  NavbarBody,
+  Link,
+  Logo,
+  Nav,
+  Log,
+  Door,
+};

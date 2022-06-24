@@ -9,7 +9,9 @@ import Categories from './Categories';
 const Home = () => {
   return (
     <Container>
-      <Filter />
+      <div className='phone'>
+        <Filter />
+      </div>
       <Carousel />
       <Recommended />
       <Choose />

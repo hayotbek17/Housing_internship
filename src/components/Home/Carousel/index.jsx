@@ -3,7 +3,7 @@ import { Container, Icon, Img, Opacity, Titles, Wrapper } from './style';
 import img1 from '../../../assets/img/img1.png';
 import img2 from '../../../assets/img/img2.png';
 import { Button } from '../../Generic';
-
+import Filter from '../../Filter';
 export const Carousel = () => {
   const slider = useRef();
   return (
@@ -18,6 +18,7 @@ export const Carousel = () => {
           Read More
         </Button>
       </Titles>
+      <Filter />
       <Icon.Left onClick={() => slider.current.prev()} />
       <Icon.Right onClick={() => slider.current.next()} />
       <Container ref={slider} dots autoplay>
