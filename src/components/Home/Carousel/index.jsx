@@ -18,7 +18,9 @@ export const Carousel = () => {
           Read More
         </Button>
       </Titles>
-      <Filter />
+      <div className='mobile'>
+        <Filter />
+      </div>
       <Icon.Left onClick={() => slider.current.prev()} />
       <Icon.Right onClick={() => slider.current.next()} />
       <Container ref={slider} dots autoplay>

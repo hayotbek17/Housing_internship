@@ -6,6 +6,9 @@ const Wrapper = styled.div`
   position: relative;
   margin-bottom: 96px;
   width: 100%;
+  .mobile {
+    display: none;
+  }
 `;
 const Container = styled(Carousel)`
   position: relative;
