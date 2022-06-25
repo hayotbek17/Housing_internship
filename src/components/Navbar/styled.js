@@ -111,6 +111,10 @@ const Door = styled(TbDoorExit)`
   height: 20px;
   color: red;
   cursor: pointer;
+  display: none;
+  @media (max-width: 760px) {
+    display: flex;
+  }
 `;
 export {
   Wrapper,

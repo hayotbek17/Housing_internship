@@ -13,14 +13,14 @@ const Choose = () => {
     <Container>
       <Tekst>
         <div className='title'>Why Choose Us?</div>
-        <div className='description'>
-          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
-        </div>
+        <div className='description'>Nulla quis curabitur velit.</div>
       </Tekst>
       <Wrapper>
         <Wrapper.Card>
           <Icon.Discord />
-          <Subtitle>Trusted By Thousands</Subtitle>
+          <Subtitle>
+            Trusted <br /> By Thousands
+          </Subtitle>
           <Description>
             With over 1 million+ homes for sale available on the website, Trulia
             can match you with a house you will want to call home.
@@ -28,7 +28,10 @@ const Choose = () => {
         </Wrapper.Card>
         <Wrapper.Card>
           <Icon.House />
-          <Subtitle>Wide Renge Of Properties</Subtitle>
+          <Subtitle>
+            Wide Renge
+            <br /> Of Properties
+          </Subtitle>
           <Description>
             With over 1 million+ homes for sale available on the website, Trulia
             can match you with a house you will want to call home.
@@ -36,7 +39,10 @@ const Choose = () => {
         </Wrapper.Card>
         <Wrapper.Card>
           <Icon.Camlculator />
-          <Subtitle>Financing Made Easy</Subtitle>
+          <Subtitle>
+            Financing <br />
+            Made Easy
+          </Subtitle>
           <Description>
             With over 1 million+ homes for sale available on the website, Trulia
             can match you with a house you will want to call home.

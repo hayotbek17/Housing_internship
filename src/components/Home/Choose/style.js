@@ -11,6 +11,16 @@ const Container = styled.div`
   width: 100%;
   align-items: center;
   padding: 0px 130px;
+  @media (max-width: 1000px) {
+    padding: 0px 30px;
+    height: 534px;
+    /* height: 100%; */
+  }
+  @media (max-width: 760px) {
+    padding: 0px;
+
+    height: 100%;
+  }
 `;
 
 const Tekst = styled.div`
@@ -27,6 +37,11 @@ const Wrapper = styled.div`
   justify-content: space-around;
 
   height: 230px;
+  @media (max-width: 760px) {
+    padding: 0px;
+    flex-direction: column;
+    height: 100%;
+  }
 `;
 Wrapper.Card = styled.div`
   text-align: center;
@@ -37,6 +52,13 @@ Wrapper.Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 760px) {
+    margin-bottom: 30px;
+  }
+  @media (max-width: 1000px) {
+    height: 300px;
+    /* height: 100%; */
+  }
 `;
 const Subtitle = styled.div`
   font-family: 'Montserrat';
@@ -63,7 +85,7 @@ const Description = styled.div`
   text-align: center;
 
   /* Text / Color */
-  padding: 0px 22px;
+  padding: 0px 5px;
 
   color: #696969;
 `;

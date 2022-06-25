@@ -17,10 +17,10 @@ export const Carousel = () => {
           {' '}
           Read More
         </Button>
+        <div className='mobile'>
+          <Filter />
+        </div>
       </Titles>
-      <div className='mobile'>
-        <Filter />
-      </div>
       <Icon.Left onClick={() => slider.current.prev()} />
       <Icon.Right onClick={() => slider.current.next()} />
       <Container ref={slider} dots autoplay>

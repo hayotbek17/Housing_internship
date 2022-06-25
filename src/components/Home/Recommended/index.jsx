@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import Card from '../../Card';
-import { Carousel, Container, Icon, Wrapper } from './style';
+import { Button } from '../../Generic';
+import { Carousel, Container, Icon, Mobile, Wrapper } from './style';
 import AliceCarousel from 'react-alice-carousel';
 export const Recommended = () => {
   const items = [
@@ -23,9 +24,15 @@ export const Recommended = () => {
         <Carousel>
           <Icon.Left onClick={() => slide.current?.slidePrev()} />
           <Icon.Right onClick={() => slide.current?.slideNext()} />
-          <AliceCarousel ref={slide} autoWidth items={items} />
+          <AliceCarousel ref={slide} autoWidth={true} items={items} />
         </Carousel>
       </Wrapper>
+      <Mobile>
+        <Card />,
+        <Card />,
+        <Card />,
+        <Card />,<Button type={'secondary'}>Show more</Button>
+      </Mobile>
     </Container>
   );
 };

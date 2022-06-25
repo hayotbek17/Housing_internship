@@ -11,6 +11,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 32px;
+  max-width: 1440px;
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 const Carousel = styled.div`
   display: flex;
@@ -21,6 +25,10 @@ const Carousel = styled.div`
   }
   .alice-carousel__next-btn {
     display: none;
+  }
+  @media (max-width: 1000px) {
+    width: 800px;
+    padding: 0px;
   }
 `;
 
@@ -75,4 +83,13 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
 `;
-export { Container, Wrapper, Carousel, Icon };
+const Mobile = styled.div`
+  display: none;
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    padding: 21px 16px;
+    width: 100%;
+  }
+`;
+export { Container, Wrapper, Carousel, Icon, Mobile };

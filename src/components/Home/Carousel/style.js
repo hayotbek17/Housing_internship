@@ -6,14 +6,14 @@ const Wrapper = styled.div`
   position: relative;
   margin-bottom: 96px;
   width: 100%;
-  .mobile {
-    display: none;
-  }
 `;
 const Container = styled(Carousel)`
   position: relative;
   width: 100%;
   height: 570px;
+  @media (max-width: 760px) {
+    height: 712px;
+  }
 `;
 const Img = styled.img`
   background-color: black;
@@ -22,6 +22,7 @@ const Img = styled.img`
   height: 570px;
   @media (max-width: 760px) {
     object-fit: cover;
+    height: 712px;
   }
 `;
 
@@ -107,10 +108,15 @@ const Titles = styled.div`
   line-height: 36px;
   text-align: center;
   letter-spacing: -0.02em;
-
+  .mobile {
+    display: none;
+  }
   @media (max-width: 760px) {
     font-size: 28px;
     line-height: 36px;
+    .mobile {
+      display: flex;
+    }
   }
   display: flex;
   flex-direction: column;

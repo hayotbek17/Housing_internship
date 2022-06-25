@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const CategoryCard = ({ title, id  }) => {
+const CategoryCard = ({ title, id }) => {
   const navigate = useNavigate();
   const goto = () => {
     navigate(`/properties?category_id=${id}`);
@@ -36,7 +36,6 @@ const Categories = () => {
     },
     {
       onSuccess: (res) => {
-        
         let response = res?.data?.map((value) => (
           <CategoryCard title={value.name} id={value.id} />
         ));
@@ -50,7 +49,7 @@ const Categories = () => {
     <Container>
       <div className='title center'>Category</div>
       <div className='description center'>
-        Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        Nulla quis curabitur velit volutpat auctor
       </div>
       <Wrapper>
         <Carousel>

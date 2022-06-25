@@ -13,13 +13,17 @@ const Container = styled.div`
     padding: 0px 50px;
   }
   @media (max-width: 760px) {
-   
+    padding: 0px;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 const Icon = styled.div`
   margin-right: 10px;
@@ -61,4 +65,32 @@ const BottomSection = styled.div`
   background: #f6f8f9;
   gap: 20px;
 `;
-export { Wrapper, Container, Icon, Advanced, Section, BottomSection };
+const Mobile = styled.div`
+  display: none;
+  padding: 24px;
+  margin: 16px;
+  margin-top: 90px;
+  height: 202px;
+  border-radius: 3px;
+  width: 100%;
+  background-color: white;
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+const MobButtons = styled.div`
+  display: flex;
+
+  margin-top: 40px;
+`;
+export {
+  Wrapper,
+  Container,
+  Icon,
+  Advanced,
+  Section,
+  BottomSection,
+  Mobile,
+  MobButtons,
+};

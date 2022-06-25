@@ -6,6 +6,8 @@ import {
   Advanced,
   Section,
   BottomSection,
+  Mobile,
+  MobButtons,
 } from './style';
 import { Input, Button } from '../Generic/';
 import { Popover } from 'antd';
@@ -30,8 +32,6 @@ const Filter = () => {
     },
     {
       onSuccess: (res) => {
-       
-
         setList(res?.data || []);
       },
     },
@@ -176,11 +176,33 @@ const Filter = () => {
             Advanced
           </Button>
         </Popover>
-        <Button ml={'20'} width={'131px'} type={'secondary'}>
+        <Button
+          className={'button'}
+          ml={'20'}
+          width={'131px'}
+          type={'secondary'}
+        >
           <Icon.Search />
           Search
         </Button>
       </Wrapper>
+      <Mobile>
+        <Input
+          pl={'42'}
+          placeholder={'Enter an address, neighborhood, city, or ZIP code'}
+        >
+          <Icon.Home />
+        </Input>
+        <MobButtons>
+          <Button width={'131px'} type={'primary'}>
+            <Icon.Settings />
+            Advanced
+          </Button>
+          <Button ml={'20'} width={'131px'} type={'secondary'}>
+            Search
+          </Button>
+        </MobButtons>
+      </Mobile>
     </Container>
   );
 };

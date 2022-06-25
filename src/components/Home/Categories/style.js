@@ -28,6 +28,15 @@ const Carousel = styled.div`
   .alice-carousel__stage-item {
     margin-right: 20px;
   }
+  @media (max-width: 1000px) {
+    width: 800px;
+    padding: 0px;
+  }
+  @media (max-width: 760px) {
+    max-width: 375px;
+    width: 100%;
+    padding: 0px 16px;
+  }
 `;
 
 const Icon = styled.div``;
@@ -55,6 +64,9 @@ Icon.Left = styled(Arrow)`
     opacity: 0.97;
   }
   cursor: pointer;
+  @media (max-width: 760px) {
+    top: 90%;
+  }
 `;
 Icon.Right = styled(Arrow)`
   display: flex;
@@ -80,6 +92,9 @@ Icon.Right = styled(Arrow)`
     opacity: 0.97;
   }
   cursor: pointer;
+  @media (max-width: 760px) {
+    top: 90%;
+  }
 `;
 Icon.Apartment = styled(Apartment)``;
 const Card = styled.div`
@@ -101,6 +116,11 @@ const Card = styled.div`
     filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
       drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
       drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
+
+  @media (max-width: 760px) {
+    width: 161px;
+    height: 201px;
   }
 `;
 Card.Title = styled.div`
