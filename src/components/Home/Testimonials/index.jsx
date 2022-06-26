@@ -8,11 +8,11 @@ import {
   Wrapper,
 } from './style';
 
-const Choose = () => {
+const Testimonials = () => {
   return (
     <Container>
       <Tekst>
-        <div className='title'>Why Choose Us?</div>
+        <div className='title'>Testimonials</div>
         <div className='description'>Nulla quis curabitur velit.</div>
       </Tekst>
       <Wrapper>
@@ -50,10 +50,7 @@ const Choose = () => {
         </Wrapper.Card>
         <Wrapper.Card>
           <Icon.Discord />
-          <Subtitle>
-            See
-            <br /> Neighborhoods
-          </Subtitle>
+          <Subtitle>See Neighborhoods</Subtitle>
           <Description>
             With over 1 million+ homes for sale available on the website, Trulia
             can match you with a house you will want to call home.
@@ -64,4 +61,4 @@ const Choose = () => {
   );
 };
 
-export default Choose;
+export default Testimonials;
