@@ -89,6 +89,7 @@ const Mobile = styled.div`
     display: flex;
     flex-direction: column;
     padding: 21px 16px;
+    align-items: center;
     width: 100%;
   }
 `;

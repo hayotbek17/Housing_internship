@@ -9,6 +9,9 @@ const Container = styled.div`
   background: #ffffff;
   max-width: 400px;
   min-width: 280px;
+  @media (max-width: 760px) {
+    width: 100%;
+  }
   flex-grow: 10;
   height: 429px;
   border: 1px solid #e6e9ec;

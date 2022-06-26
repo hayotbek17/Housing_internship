@@ -65,7 +65,7 @@ Icon.Left = styled(Arrow)`
   }
   cursor: pointer;
   @media (max-width: 760px) {
-    top: 90%;
+    top: 85%;
   }
 `;
 Icon.Right = styled(Arrow)`
@@ -93,7 +93,7 @@ Icon.Right = styled(Arrow)`
   }
   cursor: pointer;
   @media (max-width: 760px) {
-    top: 90%;
+    top: 85%;
   }
 `;
 Icon.Apartment = styled(Apartment)``;

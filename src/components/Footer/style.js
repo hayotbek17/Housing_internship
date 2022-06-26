@@ -22,6 +22,12 @@ const Wrapper = styled.div`
   width: 100%;
   height: 384px;
   max-width: 1440px;
+  @media (max-width: 760px) {
+    padding: 16px;
+    flex-direction: column;
+    height: 1285px;
+    padding-top: 48px;
+  }
 `;
 Wrapper.In = styled.div`
   display: flex;
@@ -35,6 +41,12 @@ const Bottom = styled.div`
   height: 68px;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    height: 148px;
+    padding: 0px;
+    padding-top: 20px;
+  }
 `;
 const Title = styled.div`
   font-family: 'Montserrat';
