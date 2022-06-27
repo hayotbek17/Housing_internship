@@ -1,16 +1,17 @@
 import styled from 'styled-components';
-import { ReactComponent as maps } from '../../../assets/icons/maps.svg';
-import { ReactComponent as discord } from '../../../assets/icons/discord.svg';
-import { ReactComponent as calculator } from '../../../assets/icons/calculator.svg';
-import { ReactComponent as house } from '../../../assets/icons/house 1.svg';
+import ellipse from '../../../assets/img/ellipse.png';
+import { ReactComponent as Arrow } from '../../../assets/icons/ArrowIcon.svg';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: #f5f7fc;
-  height: 434px;
+  height: 482px;
   width: 100%;
+
   align-items: center;
-  padding: 0px 130px;
+
+  position: relative;
   @media (max-width: 1000px) {
     padding: 0px 30px;
     height: 534px;
@@ -23,75 +24,140 @@ const Container = styled.div`
   }
 `;
 
+const Carousel = styled.div`
+  padding: 0px 130px;
+  max-width: 1440px;
+
+  display: flex;
+  .alice-carousel__stage {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: row;
+
+    gap: 20px;
+  }
+  .alice-carousel__dots {
+    margin: 0px 3px 50px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .alice-carousel__prev-btn {
+    display: none;
+  }
+  .alice-carousel__next-btn {
+    display: none;
+  }
+  @media (max-width: 1000px) {
+    width: 800px;
+    padding: 0px;
+  }
+  @media (max-width: 760px) {
+    width: 380px;
+    padding: 0px 16px;
+  }
+`;
 const Tekst = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 0px 40px 0px;
+  padding: 48px 0px 32px 0px;
   gap: 8px;
 `;
-
-const Wrapper = styled.div`
-  display: flex;
-  max-width: 1440px;
-  justify-content: space-around;
-
-  height: 230px;
+const Icon = styled.div`
   @media (max-width: 760px) {
-    padding: 0px;
-    flex-direction: column;
-    height: 100%;
+    display: none;
   }
 `;
-Wrapper.Card = styled.div`
+
+Icon.Left = styled(Arrow)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 60%;
+  left: 20px;
+  color: white;
+  background-color: white;
+  padding: 12px;
+  opacity: 0.7;
+  border-radius: 50%;
+  z-index: 999;
+  & path {
+    fill: #0d263b;
+  }
+  :hover {
+    opacity: 0.97;
+  }
+  cursor: pointer;
+  @media (max-width: 760px) {
+    top: 83%;
+    left: 15%;
+  }
+`;
+Icon.Right = styled(Arrow)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 60%;
+  right: 20px;
+
+  transform: rotate(180deg);
+  color: white;
+  background-color: white;
+  padding: 12px;
+  opacity: 0.7;
+  border-radius: 50%;
+  z-index: 999;
+  & path {
+    fill: #0d263b;
+  }
+  :hover {
+    opacity: 0.97;
+  }
+  cursor: pointer;
+  @media (max-width: 760px) {
+    top: 83%;
+    right: 15%;
+  }
+`;
+
+const Card = styled.div`
+  cursor: pointer;
+  height: 270px;
+  flex-grow: 10;
+`;
+const CardHead = styled.div`
+  width: 380px;
+  background: #ffffff;
+  padding: 40px 48px 61px 48px;
+  box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.1);
+  border-radius: 3px;
   text-align: center;
-  max-width: 250px;
-  width: 100%;
-  height: 100%;
+  position: relative;
+`;
+const CardBottom = styled.div`
+  position: absolute;
+  height: 115px;
+  width: 190px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 760px) {
-    margin-bottom: 30px;
-  }
-  @media (max-width: 1000px) {
-    height: 300px;
-    /* height: 100%; */
-  }
 `;
-const Subtitle = styled.div`
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
-  /* identical to box height, or 156% */
-
-  text-align: center;
-
-  /* Color / 2 */
-
-  color: #0d263b;
+const Img = styled.div`
+  width: 48px;
+  height: 48px;
+  border: 4px solid white;
+  border-radius: 50%;
+  background-image: url(${ellipse});
 `;
-const Description = styled.div`
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  /* or 150% */
-
-  text-align: center;
-
-  /* Text / Color */
-  padding: 0px 5px;
-
-  color: #696969;
-`;
-const Icon = styled.div``;
-Icon.Discord = styled(discord)``;
-Icon.House = styled(house)``;
-Icon.Maps = styled(maps)``;
-Icon.Camlculator = styled(calculator)``;
-export { Container, Tekst, Wrapper, Icon, Subtitle, Description };
+export { Container, Img, Tekst, Card, Icon, Carousel, CardBottom, CardHead };

@@ -22,6 +22,9 @@ const Wrapper = styled.div`
   width: 100%;
   height: 384px;
   max-width: 1440px;
+  @media (max-width: 1000px) {
+    padding: 48px 20px 0px 20px;
+  }
   @media (max-width: 760px) {
     padding: 16px;
     flex-direction: column;

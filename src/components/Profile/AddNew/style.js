@@ -5,6 +5,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 34px 130px;
+  @media (max-width: 1000px) {
+    padding: 34px 30px;
+  }
+  @media (max-width: 760px) {
+    padding: 34px 16px;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -22,6 +28,14 @@ const Wrapper = styled.div`
 const Section = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+      margin-left: 0px;
+    }
+  }
 
   .width {
     max-width: 260px;
@@ -30,5 +44,4 @@ const Section = styled.div`
   }
 `;
 
-
-export { Container, Section, Wrapper,  };
+export { Container, Section, Wrapper };

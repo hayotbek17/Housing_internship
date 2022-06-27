@@ -6,7 +6,8 @@ const Popular = () => {
     <Container>
       <Wrapper></Wrapper>
       <Title>
-        Vermont Farmhouse With Antique Jail Is the Week's Most Popular Home
+        Vermont Farmhouse With Antique Jail Is
+        <br /> the Week's Most Popular Home
         <Button mt={48} width={'180px'} type={'secondary'}>
           Read more
         </Button>

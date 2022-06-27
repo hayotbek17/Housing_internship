@@ -1,62 +1,94 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
+  Card,
+  CardBottom,
+  CardHead,
+  Carousel,
   Container,
-  Description,
   Icon,
-  Subtitle,
+  Img,
   Tekst,
-  Wrapper,
 } from './style';
-
+import AliceCarousel from 'react-alice-carousel';
 const Testimonials = () => {
+  const slide = useRef();
+
+  const items = [
+    [
+      <Card>
+        <CardHead>
+          <div className='description'>
+            “ I believe in lifelong learning and Skola is a great place to learn
+            from experts. I've learned a lot and recommend it to all my friends
+            “
+          </div>
+        </CardHead>
+        <CardBottom>
+          <Img />
+          <div className='subtitle'>Marvin McKinney</div>
+          <div className='description'>Designer</div>
+        </CardBottom>
+      </Card>,
+    ],
+    [
+      <Card>
+        <CardHead>
+          <div className='description'>
+            “ I believe in lifelong learning and Skola is a great place to learn
+            from experts. I've learned a lot and recommend it to all my friends
+            “
+          </div>
+        </CardHead>
+        <CardBottom>
+          <Img />
+          <div className='subtitle'>Marvin McKinney</div>
+          <div className='description'>Designer</div>
+        </CardBottom>
+      </Card>,
+    ],
+    [
+      <Card>
+        <CardHead>
+          <div className='description'>
+            “ I believe in lifelong learning and Skola is a great place to learn
+            from experts. I've learned a lot and recommend it to all my friends
+            “
+          </div>
+        </CardHead>
+        <CardBottom>
+          <Img />
+          <div className='subtitle'>Marvin McKinney</div>
+          <div className='description'>Designer</div>
+        </CardBottom>
+      </Card>,
+    ],
+    <Card>
+      <CardHead>
+        <div className='description'>
+          “ I believe in lifelong learning and Skola is a great place to learn
+          from experts. I've learned a lot and recommend it to all my friends “
+        </div>
+      </CardHead>
+      <CardBottom>
+        <Img />
+        <div className='subtitle'>Marvin McKinney</div>
+        <div className='description'>Designer</div>
+      </CardBottom>
+    </Card>,
+  ];
+
   return (
     <Container>
       <Tekst>
         <div className='title'>Testimonials</div>
         <div className='description'>Nulla quis curabitur velit.</div>
       </Tekst>
-      <Wrapper>
-        <Wrapper.Card>
-          <Icon.Discord />
-          <Subtitle>
-            Trusted <br /> By Thousands
-          </Subtitle>
-          <Description>
-            With over 1 million+ homes for sale available on the website, Trulia
-            can match you with a house you will want to call home.
-          </Description>
-        </Wrapper.Card>
-        <Wrapper.Card>
-          <Icon.House />
-          <Subtitle>
-            Wide Renge
-            <br /> Of Properties
-          </Subtitle>
-          <Description>
-            With over 1 million+ homes for sale available on the website, Trulia
-            can match you with a house you will want to call home.
-          </Description>
-        </Wrapper.Card>
-        <Wrapper.Card>
-          <Icon.Camlculator />
-          <Subtitle>
-            Financing <br />
-            Made Easy
-          </Subtitle>
-          <Description>
-            With over 1 million+ homes for sale available on the website, Trulia
-            can match you with a house you will want to call home.
-          </Description>
-        </Wrapper.Card>
-        <Wrapper.Card>
-          <Icon.Discord />
-          <Subtitle>See Neighborhoods</Subtitle>
-          <Description>
-            With over 1 million+ homes for sale available on the website, Trulia
-            can match you with a house you will want to call home.
-          </Description>
-        </Wrapper.Card>
-      </Wrapper>
+
+      <Carousel>
+        <Icon.Left onClick={() => slide.current?.slidePrev()} />
+        <Icon.Right onClick={() => slide.current?.slideNext()} />
+        <AliceCarousel ref={slide} autoWidth={true} items={items} />
+      </Carousel>
     </Container>
   );
 };
