@@ -25,8 +25,9 @@ const Container = styled.div`
   cursor: pointer;
 `;
 const Img = styled.img`
+
   min-height: 220px;
-  max-height: 220px;
+  max-height: 190px;
   width: 100%;
 `;
 

@@ -9,9 +9,10 @@ import {
   User,
   CardTitle,
 } from './style';
-import nouser from '../../assets/img/nouser.jpg';
+import nouser from '../../assets/img/nouser2.png';
 // import house from '../../assets/img/house.png';
 import noimg2 from '../../assets/img/noimg2.jpeg';
+
 export const Card = ({ info, mr, onClick }) => {
   return (
     <Container onClick={onClick} mr={mr}>
